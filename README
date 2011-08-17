@@ -1,0 +1,19 @@
+Spamgourmet Chrome Extension
+
+
+A one click address generator for the spamgourmet.com service.
+
+To install just download the files to some directory, open the
+chrome browser. Go to settings > tools > extensions and click
+on developer mode > load unpacked extension > specify the used
+directory.
+
+To use the service you will need to enter your spamgourmet user
+name in the options of the extension (right click on the icon...).
+Obviously you need a spamgourmet.com account which is free and
+useful (thanks for the service, spamgourmet team).
+
+
+Have fun with this little tool
+
+mblaster (holger.gilbergs@googlemail.com)
