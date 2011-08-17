@@ -41,17 +41,21 @@
 
 <style>
 body {
-  min-width:357px;
-  overflow-x:hidden;
+    min-width:400px;
+    overflow-x:hidden;
+    background-color:beige;
+}
+input {
+    width:390px;
 }
 </style>
 
 <body>
-	<input id="spammail" value="Generating..." readonly />
+	<input id="spammail" value="Generating..." readonly /><br>
 	<script type="text/javascript">
 		var address = genmail();
 		if (address != "") {
-			document.write("Your fresh spamgourmet address has been copied to clipboard:");
+			document.write("Your fresh spamgourmet address has been copied to clipboard.");
 			document.getElementById('spammail').value = address;
 			document.getElementById('spammail').select();
 			document.execCommand("copy");
