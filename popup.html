@@ -1,65 +1,30 @@
+<script type="text/javascript" src="scripts.js"></script>
+
 <script type="text/javascript">
-
-	var cookiename = "spamgourmet_ext_settings"
-
-	function readcookie(name) {
-		var nameEQ = name + "=";
-		var ca = document.cookie.split(';');
-		for(var i=0;i < ca.length;i++) {
-			var c = ca[i];
-			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-		}
-		return "";
-	}
-
-	function getusername() {
-		return readcookie(cookiename);
-	}
-
-	function randomemailpart() {
-		var chars = "0123456789abcdefghiklmnopqrstuvwxyz";
-		var string_length = 12;
-		var randomstring = '';
-		for (var i=0; i<string_length; i++) {
-			var rnum = Math.floor(Math.random() * chars.length);
-			randomstring += chars.substring(rnum,rnum+1);
-		}
-		return randomstring;
-	}
-
-	function genmail() {
-		var username = getusername();
-		if (username == "") return "";
-		mailaddress = randomemailpart();
-		mailaddress += ".";
-		mailaddress += username;
-		mailaddress += "@spamgourmet.com";
-		return mailaddress;
-	}
+function dispmail(){
+	document.getElementById('spammail').value = genmail();
+	document.getElementById('spammail').select();
+	document.execCommand("copy");
+	document.getElementById('spammail').unselect();
+}
 </script>
 
 <style>
 body {
-    min-width:400px;
-    overflow-x:hidden;
-    background-color:beige;
+	min-width:400px;
+	background-color:beige;
 }
 input {
-    width:390px;
+	width:390px;
 }
 </style>
 
 <body>
 	<input id="spammail" value="Generating..." readonly /><br>
 	<script type="text/javascript">
-		var address = genmail();
-		if (address != "") {
-			document.write("Your fresh spamgourmet address has been copied to clipboard.");
-			document.getElementById('spammail').value = address;
-			document.getElementById('spammail').select();
-			document.execCommand("copy");
-			document.getElementById('spammail').unselect();
+		if (getusername() != "") {
+			document.write('Your fresh spamgourmet address has been copied to clipboard.<br><a href="#" onClick="dispmail();">I don´t like it, gimme a new one!</a>');
+			dispmail();
 		}
 		else {
 			document.write("No username specified. Please set up.");

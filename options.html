@@ -1,31 +1,10 @@
-<script type="text/javascript">
+<html>
 
-	var cookiename = "spamgourmet_ext_settings"
+<script type="text/javascript" src="scripts.js"></script>
 
-	function createcookie(name,value) {
-		document.cookie = name+"="+value+"; path=/";
-	}
-
-	function readcookie(name) {
-		var nameEQ = name + "=";
-		var ca = document.cookie.split(';');
-		for(var i=0;i < ca.length;i++) {
-			var c = ca[i];
-			while (c.charAt(0)==' ') c = c.substring(1,c.length);
-			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-		}
-		return "";
-	}
-
-	function getusername() {
-		return readcookie(cookiename);
-	}
-	
-	function saveusername() {
-		createcookie(cookiename, document.getElementById('username').value);
-	}
-	
-</script>
+<head>
+	<title>Configure spamgourmet address generator</title>
+</head>
 
 <body>
 	<h2>Configure spamgourmet address generator</h2>
@@ -42,3 +21,4 @@
 	Spamgourmet address generator is written by Holger Gilbergs (mblaster). <br>
     For updates check my <a href="https://github.com/mblaster/SpamgourmetChromeExtension">github</a>.
 </body>
+</html>
