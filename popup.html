@@ -11,7 +11,7 @@ function dispmail(){
 
 <style>
 body {
-	min-width:400px;
+	min-width:550px;
 	background-color:beige;
 }
 input {
@@ -20,15 +20,24 @@ input {
 </style>
 
 <body>
-	<input id="spammail" value="Generating..." readonly /><br>
-	<script type="text/javascript">
-		if (getusername() != "") {
-			document.write('Your fresh spamgourmet address has been copied to clipboard.<br><a href="#" onClick="dispmail();">I don´t like it, gimme a new one!</a>');
-			dispmail();
-		}
-		else {
-			document.write("No username specified. Please set up.");
-			document.getElementById('spammail').value = "Generation failed...";
-		}
-	</script>
+	<table border="0">
+		<tr>
+			<td>
+				<img src="small.png">
+			</td>
+			<td>
+				<input id="spammail" value="Generating..." readonly /><br>
+				<script type="text/javascript">
+					if (getusername() != "") {
+						document.write('Your fresh spamgourmet address has been copied to clipboard.<br><a href="#" onClick="dispmail();">I don´t like it, gimme a new one!</a>');
+						dispmail();
+					}
+					else {
+						document.write("No username specified. Please set up.");
+						document.getElementById('spammail').value = "Generation failed...";
+					}
+				</script>
+			</td>
+		</tr>
+	</table>
 </body>
